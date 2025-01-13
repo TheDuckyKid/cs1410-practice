@@ -5,6 +5,7 @@ Write a program that takes a year as input and checks if it's a leap year.
 """
 quacl = int(input("Please type a number "))
 if quacl % 4 == 0:
-    print("duck")
+    print("yay")
+    if quacl % 400 ==
 else:
     print("test")
