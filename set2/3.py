@@ -29,4 +29,26 @@ if is_first_time_buyer.lower() == "yes" or is_first_time_buyer.lower() == "y":
     is_first_time_buyer = True
 elif is_first_time_buyer.lower() == "no" or is_first_time_buyer.lower() == "n":
     is_first_time_buyer = False
-
+if total_amount >=  200:
+        if is_first_time_buyer == True: 
+            dsc = total_amount * .20
+            total_amount -= dsc
+            print("Your total is now " + str(total_amount))
+        else:
+            dsc = total_amount * .10 
+            total_amount -= dsc
+            print("Your total is now " + str(total_amount))
+elif total_amount >= 100 and total_amount >= 199:
+    dsc = total_amount * .05
+    total_amount -= dsc
+    if total_items >= 5:
+        total_items -= 10
+        print("Your total is now " + str(total_amount))
+    else:
+        print("Your total is now " + str(total_amount))
+elif total_amount <= 99.99:
+    if is_first_time_buyer == True:
+        total_amount -= 5
+        print("Your total is now " + str(total_amount))
+    elif is_first_time_buyer == False:
+        print("Your total is now " + str(total_amount))
