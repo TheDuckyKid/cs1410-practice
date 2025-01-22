@@ -22,3 +22,34 @@ If the income is above $100,000:
 """
 income = float(input("What is your yearly income? "))
 is_married = input("Are you married? ")
+has_dependents = input("Do you have Dependents? ")
+owns_business = input("Do you own a business? ")
+
+if has_dependents.lower() == "yes" or has_dependents.lower() == "y":
+    has_dependents = True
+elif has_dependents.lower() == "no" or has_dependents.lower() == "n":
+    has_dependents = False
+
+if owns_business.lower() == "yes" or owns_business.lower() == "y":
+    owns_business = True
+elif owns_business.lower() == "no" or owns_business.lower() == "n":
+    owns_business = False
+
+if income <= 29999:
+    if is_married == False:
+        print("Your tax is 10%")
+    elif is_married == True:
+        print("Your tax is 8%")
+elif income <= 100000:
+    if has_dependents == True:
+        if is_married == False:
+            print("Your tax is 15%")
+        if is_married == True:
+            print("Your tax is 12%")
+    elif has_dependents == False:
+        print("Your tax is 18%")
+elif income >= 100001:
+    if owns_business == True:
+        print("Your tax is 25%")
+    else:
+        print("Your tax is 28%")
